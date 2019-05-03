@@ -1,0 +1,33 @@
+<!--
+  Generated template for the Pagina2Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Mutantes</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <h1>Envio por evento</h1>
+
+  <ion-list>
+    <button ion-item *ngFor="let mutante of mutantes" (click)="goPage3(mutante)">
+      {{ mutante.nombre }} {{ mutante.apellido }}
+    </button>
+  </ion-list>
+
+  <h1>Envio por HTML</h1>
+  <ion-list>
+    <button ion-item *ngFor="let mutante of mutantes" [navPush] = "pagina3" [navParams] = "{'mutante': mutante}">
+      {{ mutante.nombre }} {{ mutante.apellido }}
+    </button>
+  </ion-list>
+
+</ion-content>
